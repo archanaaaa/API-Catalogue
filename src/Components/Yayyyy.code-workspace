@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "..\\.."
+		},
+		{
+			"path": "..\\..\\..\\rental-frontend-master"
+		}
+	],
+	"settings": {
+		"workbench.preferredDarkColorTheme": "Visual Studio Light",
+		"workbench.colorTheme": "Default Dark+"
+	}
+}
