@@ -4,8 +4,10 @@
 node_modules
 /.pnp
 .pnp.js
+
+.vscode
+src\Components\Yayyyy.code-workspace
 package-lock.json
-vscode
 
 # testing
 /coverage
