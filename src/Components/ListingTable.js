@@ -7,10 +7,6 @@ import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 export default class ListingTable extends Component {
     constructor(props){
         super(props);
-        this.state = {
-            showTableContent : this.props.showTableContent,
-            data : [],
-        }
     }
     
 
@@ -21,10 +17,8 @@ render(){
        
         return(
                 
-                <div className="container mt-2">
-                <div className="row">
-                <div className="col-12 ">
-                <Card>
+                
+                <Card className="mt-2">
                     <CardBody  outline="info">
                         <CardHeader tag="h3" color="info">Service Information</CardHeader>
                 
@@ -43,7 +37,7 @@ render(){
                         </tr>
                     </thead>
                     {
-                    dataArray.filter(data =>data.typeofLicense===this.props.Type_of_Service && this.state.showTableContent ).map(data => (
+                    dataArray.filter(data =>data.typeofLicense===this.props.Type_of_Service).map(data => (
                     <tbody key={data.apiId} >
                         <tr>                        
                         <td>{data.serviceName}</td>
@@ -71,9 +65,7 @@ render(){
                     </div>
                     </CardBody>
                 </Card>
-                </div>
-                </div>
-                </div>
+               
          );
     }
 }

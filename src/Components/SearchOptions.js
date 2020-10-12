@@ -6,11 +6,12 @@ export default class SearchOpions extends Component {
     constructor(props){
         super(props)
         this.state = {
-            Product_Type : '',
-            Domain : '',
-            Version_Compatibility : '',
-            Type_of_Service : '',
+            Product_Type : 'FACETS',
+            Domain : 'Product',
+            Version_Compatibility : '5.30',
+            Type_of_Service : 'Base',
             showTableContent : false,
+           
             
         };
 
@@ -33,25 +34,24 @@ export default class SearchOpions extends Component {
         const name = event.target.name;
     
         this.setState({
-          [name]: value
+        showTableContent : false,
+          [name]: value,
         });
+        event.preventDefault();
       }
 
     handleSubmit=(event)=> {
 
-        this.setState({showTableContent : true});
+        this.setState({
+            showTableContent : true});
         event.preventDefault();
+       
     }
 
     render(){
         
         const temp = this.props.data;
-            
-        console.log(temp);
-        for(var x in temp){
-            console.log(temp[x]);
-        }
-
+        
         return(
                 <>
                 <div className="container">
@@ -118,18 +118,20 @@ export default class SearchOpions extends Component {
                 </div>
                 </div>
                 </div>
-
+                {this.state.showTableContent  && 
                 
-                {this.state.showTableContent && 
+                <ListingTable data = {temp} 
+                showTableContent = {this.state.showTableContent}
+                Product_Type = {this.state.Product_Type}
+                Domain = {this.state.Domain}
+                Version_Compatibility = {this.state.Version_Compatibility}
+                Type_of_Service = {this.state.Type_of_Service}/>
                 
-                        <ListingTable data = {temp} 
-                              showTableContent = {this.state.showTableContent}
-                              Product_Type = {this.state.Product_Type}
-                              Domain = {this.state.Domain}
-                              Version_Compatibility = {this.state.Version_Compatibility}
-                              Type_of_Service = {this.state.Type_of_Service}/>
-                                
+                
+                
                 }
+                
+                
             </>
         );
     }

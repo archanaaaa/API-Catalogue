@@ -29,7 +29,7 @@ class Login extends Component {
 
     if (
       this.state.email === "api" &&
-      this.state.password === "api"
+      this.state.password !== ""
     ) {
       this.setState({
         isSuccess: true,
@@ -74,7 +74,7 @@ class Login extends Component {
                   className="form-control"
                   id="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder="User Name"
                   onChange={this.onChange}
                   required
                 />
@@ -100,10 +100,7 @@ class Login extends Component {
               </button>
               <br />
               <div>
-                Not a member yet?{" "}
-                <a href="/signUp" className="p-2 text-dark">
-                  Sign up
-                </a>
+               
               </div>
             </form>
           </section>
