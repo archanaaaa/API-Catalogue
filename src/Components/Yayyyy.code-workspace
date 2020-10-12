@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "..\\..\\..\\rental-frontend-master"
+		},
+		{
+			"path": "..\\..\\..\\Login React"
+		},
+		{
+			"path": "..\\..\\..\\FullStackCourse\\react\\confusion"
 		}
 	],
 	"settings": {
